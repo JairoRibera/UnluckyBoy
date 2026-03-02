@@ -22,15 +22,6 @@
             "m_Id": "7f3d18a6162c49b48c7c4ff3f2a15ec6"
         },
         {
-            "m_Id": "fc85656d8bff465eaaddcb0094e7161c"
-        },
-        {
-            "m_Id": "a8fef2d637c843aea90fe2510eaea1d0"
-        },
-        {
-            "m_Id": "d5dcc045381b4947bb00b86e329c1105"
-        },
-        {
             "m_Id": "811d9956b7c946f1adde92de24a57985"
         },
         {
@@ -4559,42 +4550,6 @@
 }
 
 {
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Texture2DShaderProperty",
-    "m_ObjectId": "a8fef2d637c843aea90fe2510eaea1d0",
-    "m_Guid": {
-        "m_GuidSerialized": "636ffddb-194a-481f-86ff-4d9891ad5d08"
-    },
-    "promotedFromAssetID": "",
-    "promotedFromCategoryName": "",
-    "promotedOrdering": -1,
-    "m_Name": "Base Texture",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Base Texture",
-    "m_DefaultReferenceName": "_Base_Texture",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_PerRendererData": false,
-    "m_customAttributes": [],
-    "m_Value": {
-        "m_SerializedTexture": "",
-        "m_Guid": ""
-    },
-    "isMainTexture": false,
-    "useTilingAndOffset": false,
-    "useTexelSize": true,
-    "m_Modifiable": true,
-    "m_DefaultType": 0
-}
-
-{
     "m_SGVersion": 1,
     "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
     "m_ObjectId": "aaed3f21e5d84f52b8ab39e73001ddd3",
@@ -4717,15 +4672,6 @@
     "m_ObjectId": "b227d4528b2640298d4892ac63ea1307",
     "m_Name": "Dither",
     "m_ChildObjectList": [
-        {
-            "m_Id": "fc85656d8bff465eaaddcb0094e7161c"
-        },
-        {
-            "m_Id": "a8fef2d637c843aea90fe2510eaea1d0"
-        },
-        {
-            "m_Id": "d5dcc045381b4947bb00b86e329c1105"
-        },
         {
             "m_Id": "7f3d18a6162c49b48c7c4ff3f2a15ec6"
         },
@@ -5503,50 +5449,6 @@
     "m_Group": {
         "m_Id": ""
     }
-}
-
-{
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "d5dcc045381b4947bb00b86e329c1105",
-    "m_Guid": {
-        "m_GuidSerialized": "be5876d9-eee3-4e0f-99f8-0d29aade2af8"
-    },
-    "promotedFromAssetID": "",
-    "promotedFromCategoryName": "",
-    "promotedOrdering": -1,
-    "m_Name": "Shading Multipler",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Shading Multipler",
-    "m_DefaultReferenceName": "_Shading_Multipler",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_PerRendererData": false,
-    "m_customAttributes": [],
-    "m_Value": 0.10000000149011612,
-    "m_FloatType": 0,
-    "m_LiteralFloatMode": false,
-    "m_RangeValues": {
-        "x": 0.0,
-        "y": 1.0
-    },
-    "m_SliderType": 0,
-    "m_SliderPower": 3.0,
-    "m_EnumType": 0,
-    "m_CSharpEnumString": "",
-    "m_EnumNames": [
-        "Default"
-    ],
-    "m_EnumValues": [
-        0
-    ]
 }
 
 {
@@ -6818,41 +6720,6 @@
         "w": 0.0
     },
     "m_LiteralMode": false
-}
-
-{
-    "m_SGVersion": 3,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
-    "m_ObjectId": "fc85656d8bff465eaaddcb0094e7161c",
-    "m_Guid": {
-        "m_GuidSerialized": "4b4ad6dd-2675-4780-b564-7e45f57eb373"
-    },
-    "promotedFromAssetID": "",
-    "promotedFromCategoryName": "",
-    "promotedOrdering": -1,
-    "m_Name": "Base Color",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Base Color",
-    "m_DefaultReferenceName": "_Base_Color",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_PerRendererData": false,
-    "m_customAttributes": [],
-    "m_Value": {
-        "r": 1.0,
-        "g": 1.0,
-        "b": 1.0,
-        "a": 1.0
-    },
-    "isMainColor": false,
-    "m_ColorMode": 0
 }
 
 {
