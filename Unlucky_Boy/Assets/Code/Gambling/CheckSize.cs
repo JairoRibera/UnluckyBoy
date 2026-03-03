@@ -7,23 +7,38 @@ public class CheckSize : MonoBehaviour
     public static CheckSize Instance;
     private Vector3 posFinal;
     public LayerMask Cara;
+    private ID_Size_Dado dadoId;
+    public int cara;
     private void Awake()
     {
         Instance = this;
     }
     public void ComprobarNumero()
     {
+        //Indicamos que la posicion final es la misma que la del dado en x z en la y le ponemos 4
         posFinal = new Vector3(dadoPos.transform.position.x, 4, dadoPos.transform.position.z);
+        //Igualamos la posicion del objeto a la posicion final
         transform.position = posFinal;
         RaycastHit hit;
+        //Lanzamos un raycast desde la posición del objeto hacia abajo, detectando la layer Cara
         if (Physics.Raycast(transform.position, Vector3.down * 4 , out hit, Cara))
         {
-            Debug.Log("Pium Pium");
-            Debug.Log("Golpeé: " + hit.transform.name); // Muestra el nombre del objeto golpeado
-            //Debug.Log("Punto de impacto: " + hit.point); // Punto exacto en 3D [3]
-            //Debug.DrawRay(transform.position, dadoPos.transform.position, Color.green);
-            hit.collider.GetComponent<ID_Size_Dado>();
-            //Debug.Log("Cara numero" + hit.collider.ID_Size);
+            //Obtenemos el componente ID_Size_Dado para obtener el número de la cara
+            dadoId = hit.collider.GetComponent<ID_Size_Dado>();
+            if (dadoId != null)
+            {
+                //Si el valor no es null entonces igualamos el int al numero de la cara del dado
+                cara = dadoId.ID_Size;
+            }
+            else
+            {
+                return;
+            }
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, Vector3.down * 4);
     }
 }

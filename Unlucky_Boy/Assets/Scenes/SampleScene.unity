@@ -180,7 +180,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -572,6 +572,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: f878cbde95ea65b439e62c7bd81b7b2d, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 83dd069f2908280469a907983814e19d, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f878cbde95ea65b439e62c7bd81b7b2d, type: 2}
     - target: {fileID: 919132149155446097, guid: 83dd069f2908280469a907983814e19d, type: 3}
       propertyPath: m_Name
       value: Dado Gioco A001
@@ -669,7 +673,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -714,7 +718,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818453195}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f1d92292279bd954dbe8e0d47758a4ed, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -726,8 +730,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0999947, y: 1.0999937, z: 1.0999908}
-  m_Center: {x: -0.00000029802322, y: 0.0000013709072, z: 0.0000024437911}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &818453200 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 83dd069f2908280469a907983814e19d, type: 3}
@@ -745,8 +749,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2545f4bbf9102645a3b9511f344edf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dado
-  _torqueMinimun: 25
-  _torqueMaximun: 3
+  _torqueMinimun: 0.2
+  _torqueMaximun: 5
   _throwStrength: 1
 --- !u!1 &832575517
 GameObject:
@@ -1020,7 +1024,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1074,6 +1078,7 @@ MonoBehaviour:
   Cara:
     serializedVersion: 2
     m_Bits: 8
+  cara: 0
 --- !u!1 &1584407932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,7 +1140,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1339,7 +1344,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1406,7 +1411,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
