@@ -749,8 +749,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2545f4bbf9102645a3b9511f344edf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dado
-  _torqueMinimun: 0.2
-  _torqueMaximun: 5
+  _torqueMinimun: 2
+  _torqueMaximun: 10
   _throwStrength: 1
 --- !u!1 &832575517
 GameObject:
@@ -957,7 +957,7 @@ Transform:
   m_GameObject: {fileID: 907392233}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: -2.08, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

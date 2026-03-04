@@ -28,7 +28,7 @@ public class Dado : MonoBehaviour
         //Esperamos hasta el siguiente FixedUpdate
         yield return new WaitForFixedUpdate();
         //Mientras el objeto siga girando esperará a que empiece el siguiente FixedUpdate
-        while(_rB.angularVelocity.sqrMagnitude > 0.5)
+        while(_rB.angularVelocity.sqrMagnitude > 0.1)
         {
             yield return new WaitForFixedUpdate();
         }

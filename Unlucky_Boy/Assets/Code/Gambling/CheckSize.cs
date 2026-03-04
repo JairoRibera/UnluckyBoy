@@ -9,6 +9,7 @@ public class CheckSize : MonoBehaviour
     public LayerMask Cara;
     private ID_Size_Dado dadoId;
     public int cara;
+    private Rigidbody rb;
     private void Awake()
     {
         Instance = this;
@@ -23,16 +24,19 @@ public class CheckSize : MonoBehaviour
         //Lanzamos un raycast desde la posición del objeto hacia abajo, detectando la layer Cara
         if (Physics.Raycast(transform.position, Vector3.down * 4 , out hit, Cara))
         {
+            rb = dadoPos.GetComponent<Rigidbody>();
             //Obtenemos el componente ID_Size_Dado para obtener el número de la cara
             dadoId = hit.collider.GetComponent<ID_Size_Dado>();
             if (dadoId != null)
             {
                 //Si el valor no es null entonces igualamos el int al numero de la cara del dado
                 cara = dadoId.ID_Size;
+                Debug.Log("La cara numero " + cara);
             }
             else
             {
-                return;
+                //Si el dado se queda quiero sobre una arista, le añadimos una fuerza para evitar ese problema
+                rb.AddForce(Vector3.right * 0.001f, ForceMode.Impulse);
             }
         }
     }
