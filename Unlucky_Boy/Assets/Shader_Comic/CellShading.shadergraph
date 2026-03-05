@@ -1376,7 +1376,7 @@
     "m_Title": "remapear valores",
     "m_Position": {
         "x": -515.0,
-        "y": 2217.0
+        "y": 2217.000244140625
     }
 }
 
@@ -2716,7 +2716,7 @@
     "m_Title": "Generador patrón dither",
     "m_Position": {
         "x": -463.0,
-        "y": 3078.0
+        "y": 3078.000244140625
     }
 }
 
@@ -3456,8 +3456,8 @@
     "m_ObjectId": "7cc604242c054f29bb9515f2d4ae9c34",
     "m_Title": "Corregir el ratio de aspecto",
     "m_Position": {
-        "x": -1374.0,
-        "y": 2817.0
+        "x": -1374.0001220703125,
+        "y": 2817.000244140625
     }
 }
 
@@ -5034,10 +5034,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 228.0000457763672,
-            "y": 1604.9998779296875,
-            "width": 114.00016784667969,
-            "height": 34.000244140625
+            "x": 209.00001525878907,
+            "y": 1605.0,
+            "width": 113.99998474121094,
+            "height": 34.0
         }
     },
     "m_Slots": [
@@ -5629,8 +5629,8 @@
     "m_ObjectId": "d8e608abbd8147309e6dcd12f153781a",
     "m_Title": "Conseguir el valor del diffuse de la luz",
     "m_Position": {
-        "x": -1872.0,
-        "y": 2068.0
+        "x": -1872.0001220703125,
+        "y": 2068.000244140625
     }
 }
 
