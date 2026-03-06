@@ -1011,8 +1011,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GiroRuleta
   duracionGiro: 4
-  vueltasMin: 8
-  vueltasMax: 10
+  vueltasMin: 4
+  vueltasMax: 6
   cantidadPremios: 6
 --- !u!1 &818453195 stripped
 GameObject:
