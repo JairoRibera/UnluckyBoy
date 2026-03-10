@@ -52,6 +52,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Line_Texture:
+        m_Texture: {fileID: 2800000, guid: 9c774ef4e05e54c41a72756e40be840a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: df72f9513e647e7489a8ba2eda275f37, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -97,6 +101,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
+    - _Density: 40
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -106,6 +111,11 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _LineDensity: 150
+    - _LineWidth: 0.3
+    - _Line_Diagonal: 1
+    - _Line_Horizontal: 0.5
+    - _Line_Vertical: 0.75
     - _Lit_Threshold: 1.01
     - _Max: 1
     - _Metallic: 0.022
