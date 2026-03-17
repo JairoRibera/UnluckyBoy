@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ToonShader_Line
-  m_Shader: {fileID: -6465566751694194690, guid: 287f7151a67b44b4c84d35961627bbed, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 5720b30dbaca25b42b5a5e07bd25ff47, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -57,7 +57,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Line_Texture:
-        m_Texture: {fileID: 2800000, guid: 18a39d4e1f23c6e4dbd7fcf6adc51f69, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5f347e16f1c923c4bb7ad1e31aeb5554, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -118,33 +118,35 @@ Material:
     - _Density: 59.65
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Diagonal_Line: 0.77
+    - _Diagonal_Line: 0.87
+    - _Diagonal_Line_Limit: 0.92
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _Fade_Distance: 75
-    - _Fall_of_Threshold_Lineas: 1.06
+    - _Fall_of_Threshold_Lineas: 1
     - _Fallof_Threshold: 0.96
     - _Fallof_Threshold_Lineas: 1.78
     - _Float: 0
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Horizontal_Line: 0.32
+    - _Horizontal_Line: 0.5
+    - _Horizontal_Line_Limit: 0.5
     - _LineDensity: 129.3
     - _LineWidth: 63.4
     - _Line_Density: 0.89
     - _Line_Diagonal: 0.79
-    - _Line_Diagonal_Density: 2
-    - _Line_Diagonal_Size: 43.4
+    - _Line_Diagonal_Density: 1
+    - _Line_Diagonal_Size: 1
     - _Line_Horizontal: 0.5
-    - _Line_Horizontal_Density: 5
-    - _Line_Horizontal_Size: 6.39
+    - _Line_Horizontal_Density: 1
+    - _Line_Horizontal_Size: 1
     - _Line_Vertical: 0.75
     - _Line_Vertical_Density: 1
-    - _Line_Vertical_Size: 5.61
+    - _Line_Vertical_Size: 5
     - _Lit_Threshold: 1.49
-    - _Lit_Threshold_Lineas: 0.63
+    - _Lit_Threshold_Lineas: 0.75
     - _Max: 3
     - _Metallic: 0
     - _Min: 0.1
@@ -170,7 +172,8 @@ Material:
     - _Surface: 0
     - _USESCREENSPACE: 0
     - _USE_SCREEN_SPACE: 0
-    - _Vertical_Line: 0.42
+    - _Vertical_Line: 0.79
+    - _Vertical_Line_Limit: 0.75
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
@@ -180,14 +183,14 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color_Outline: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Offset: {r: 2, g: 2, b: 0, a: 0}
+    - _Offset: {r: 1, g: 1, b: 0, a: 0}
     - _Rim_Light_Color: {r: 1, g: 0, b: 0, a: 1}
     - _ShadowTexture_Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Shadow_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Shadow_Pattern_Color: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Tilin: {r: 2, g: 2, b: 0, a: 0}
-    - _Tiling: {r: 2, g: 2, b: 0, a: 0}
+    - _Tiling: {r: 5, g: 5, b: 0, a: 0}
     - _Tint: {r: 1, g: 0, b: 0, a: 1}
     - _tiling_Offset: {r: 2.14, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
