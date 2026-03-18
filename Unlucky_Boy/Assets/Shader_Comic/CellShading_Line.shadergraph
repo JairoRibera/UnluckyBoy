@@ -8346,8 +8346,8 @@
     "m_ObjectId": "c0cc9e6991cc437c8970947d40ae733a",
     "m_Title": "Conseguir el valor del diffuse de la luz",
     "m_Position": {
-        "x": -2870.000244140625,
-        "y": -1642.0001220703125
+        "x": -2870.0,
+        "y": -1642.0
     }
 }
 
@@ -8806,7 +8806,7 @@
     "m_Title": "remapear valores",
     "m_Position": {
         "x": -1304.0,
-        "y": -1511.0001220703125
+        "y": -1511.0
     }
 }
 
