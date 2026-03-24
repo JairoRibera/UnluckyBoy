@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ToonShader_Line
-  m_Shader: {fileID: -6465566751694194690, guid: 5720b30dbaca25b42b5a5e07bd25ff47, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: edd655f3089e537459dbcf766c6e9407, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -124,6 +124,7 @@ Material:
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _Fade_Distance: 75
+    - _Fall_of_Threshold: 2.5
     - _Fall_of_Threshold_Lineas: 1
     - _Fallof_Threshold: 0.96
     - _Fallof_Threshold_Lineas: 1.78
@@ -143,9 +144,9 @@ Material:
     - _Line_Horizontal_Density: 0.874
     - _Line_Horizontal_Size: 2
     - _Line_Vertical: 0.75
-    - _Line_Vertical_Density: 1
+    - _Line_Vertical_Density: 0.57
     - _Line_Vertical_Size: 5
-    - _Lit_Threshold: 1.49
+    - _Lit_Threshold: 1.14
     - _Lit_Threshold_Lineas: 0.75
     - _Max: 3
     - _Metallic: 0
@@ -157,6 +158,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Rim_Light_Intensity: 10
+    - _Rotate: 45
     - _Rotation: 1.37
     - _Scale: 0.5
     - _Shades: 0.49

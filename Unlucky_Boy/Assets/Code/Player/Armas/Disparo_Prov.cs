@@ -9,6 +9,7 @@ public class Disparo_Prov : MonoBehaviour
     private Camera cam;
     public float range;
     public float damage;
+    public float bullet;
     private void Start()
     {
         cam = Camera.main;
@@ -26,6 +27,7 @@ public class Disparo_Prov : MonoBehaviour
     {
         if (arma.canShoot == true)
         {
+            bullet = arma.bullet;
             range = arma.distance;
             damage = arma.damage;
             Debug.Log("Pium pium");
