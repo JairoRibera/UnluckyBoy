@@ -9,16 +9,13 @@ public class Disparo_Prov : MonoBehaviour
     public armas arma;
     private Camera cam;
     public float range;
-    public float damage;
+    private float damage =  10;
     public float bullet;
-    //Collider de la hitbox
-    public GameObject hitbox;
-    public float Temporizador;
-    public float time = 0.5f;
+    public LayerMask Enemy;
+
     private void Start()
     {
         cam = Camera.main;
-        Temporizador = time;
     }
     void Update()
     {
@@ -34,19 +31,15 @@ public class Disparo_Prov : MonoBehaviour
         //Comrpobamos si el arma que se está es arma de fuego o cuerpo a cuerpo
         if (arma.canShoot == true)
         {
-            //Igualamos el numero de balas, rango y daño del scriptable object al script
-            bullet = arma.bullet;
-            range = arma.distance;
-            damage = arma.damage;
             Debug.Log("Pium pium");
             RaycastHit hit;
 
-            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
+            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range, Enemy))
             {
                 Debug.Log("Golpeaste a: " + hit.transform.name);
+                hit.collider.GetComponent<Enemy>().recibirdano(damage);
             }
 
         }
-        else Debug.Log("Es arma cuerpo a cuerpo");
     }
 }
