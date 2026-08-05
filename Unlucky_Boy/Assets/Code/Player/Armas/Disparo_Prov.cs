@@ -37,7 +37,7 @@ public class Disparo_Prov : MonoBehaviour
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range, Enemy))
             {
                 Debug.Log("Golpeaste a: " + hit.transform.name);
-                hit.collider.GetComponent<Enemy>().recibirdano(damage);
+                //hit.collider.GetComponent<Enemy>().recibirdano(damage);
             }
 
         }
