@@ -34,10 +34,19 @@ public class Disparo_Prov : MonoBehaviour
             Debug.Log("Pium pium");
             RaycastHit hit;
 
-            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range, Enemy))
+            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
             {
-                Debug.Log("Golpeaste a: " + hit.transform.name);
-                //hit.collider.GetComponent<Enemy>().recibirdano(damage);
+                if(hit.collider.TryGetComponent(out IsShooteable isshoteable))
+                {
+
+                    Debug.Log("Golpeaste a: " + hit.transform.name);
+                    // Le enviamos la coordenada 3D exacta del disparo
+                    isshoteable.RecibeShoot(hit.point);
+                }
+                else
+                {
+                    Debug.LogWarning(" El objeto NO tiene el componente IsShooteable.");
+                }
             }
 
         }

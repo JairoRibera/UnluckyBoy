@@ -46,7 +46,6 @@ public class EnemyMove : MonoBehaviour
             agent.speed = speed;
             agent.SetDestination(playerPosition);
             transform.LookAt(playerPosition);
-            Debug.Log("Trae ese klo pa acá");
             if(distancetoShoot <= 6)
             {
                 agent.isStopped = true;
@@ -55,12 +54,17 @@ public class EnemyMove : MonoBehaviour
         }
         else
         {
+            agent.isStopped = false;
             //Si esta lo suficientemente cerca de su destino, busco uno nuevo
             //Le añadimos un poco a su stoppingDistance para que funcione
             //Independientemente de  lo lejos o cerca que se pare
-            if (agent.remainingDistance <= 0.1f + agent.stoppingDistance)
+            //if (agent.remainingDistance <= 0.1f + agent.stoppingDistance)
+            //{
+            //    FindRandomPoint();
+            //}
+            // 2. Si venía de perseguir al jugador (o se quedó sin ruta), forzamos punto nuevo
+            if (!agent.hasPath || agent.remainingDistance <= 0.1f + agent.stoppingDistance)
             {
-                agent.isStopped = false;
                 FindRandomPoint();
             }
         }
