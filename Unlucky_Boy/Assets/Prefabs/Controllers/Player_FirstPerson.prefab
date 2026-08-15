@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 2646712190081141138}
   - component: {fileID: 9018187172479028022}
   - component: {fileID: 7341574348199422785}
+  - component: {fileID: 8687369203112899745}
   m_Layer: 8
   m_Name: Player_FirstPerson
   m_TagString: Player
@@ -489,6 +490,20 @@ MonoBehaviour:
   maxLife: 100
   actuaLife: 0
   barravidaRef: {fileID: 0}
+--- !u!114 &8687369203112899745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6699292588945406385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65db64076404bf34db42b3c70eb25d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorLocker
+  bloquearAlIniciar: 1
+  teclaLiberar: 27
 --- !u!1 &7255949113177471389
 GameObject:
   m_ObjectHideFlags: 0
