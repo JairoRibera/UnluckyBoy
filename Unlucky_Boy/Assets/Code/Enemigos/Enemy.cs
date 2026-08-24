@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public interface IsShooteable
 {
     //Pasamos el punto de impacto
-    public void RecibeShoot(Vector3 hitpoint);
+    public void RecibeShoot(Vector3 hitpoint, float damage);
 }
 public class Enemy : MonoBehaviour
 {

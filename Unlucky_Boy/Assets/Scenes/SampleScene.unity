@@ -301,6 +301,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &163746021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 163746023}
+  - component: {fileID: 163746022}
+  m_Layer: 0
+  m_Name: Bullet_EnemyPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &163746022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163746021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aedf7ab75fdfa484cb9d6f653e758326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullet_EnemyPooling
+  bulletPrefab: {fileID: 5056734749029994483, guid: 7cc7d167c25c43b4e96987b47ebfd7fe, type: 3}
+  defaultCapacity: 100
+  maxCapacity: 400
+--- !u!4 &163746023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163746021}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.13683, y: 0, z: 11.79172}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &233910364
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,10 +569,17 @@ PrefabInstance:
       propertyPath: barravidaRef
       value: 
       objectReference: {fileID: 1928647648}
+    - target: {fileID: 9018187172479028022, guid: 517d53d0f6a4d4a498b5c3a4d2acef74, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6699292588945406385, guid: 517d53d0f6a4d4a498b5c3a4d2acef74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 397140912}
   m_SourcePrefab: {fileID: 100100000, guid: 517d53d0f6a4d4a498b5c3a4d2acef74, type: 3}
 --- !u!1 &397140902 stripped
 GameObject:
@@ -543,6 +597,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a6d60e8059a5fb488c5ea65a25630cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player_Life
+--- !u!114 &397140912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397140902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc113d4d310736644a1877971e9a7c90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlackJack_Gun
+  armaData: {fileID: 11400000, guid: a2130caed05204347b757f239a270e3b, type: 2}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  maxChargeCards: 3
+  timeBetweenCards: 0.4
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2380,6 +2452,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1435918265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1435918266}
+  m_Layer: 7
+  m_Name: ShootOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1435918266
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435918265}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.279, y: 0.146, z: 0.873}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1893426561}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1531702755
 GameObject:
   m_ObjectHideFlags: 0
@@ -2891,7 +2994,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -3071,6 +3174,7 @@ Transform:
   - {fileID: 1001754754}
   - {fileID: 2073761293}
   - {fileID: 1858447540}
+  - {fileID: 1435918266}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1893426562
@@ -3115,7 +3219,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893426556}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: caab23e25baa0dd4e85cd5328c9c58d9, type: 3}
   m_Name: 
@@ -3137,16 +3241,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893426556}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 027ebf2e5dce5614fa1caf57b49f7ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShoot
-  range: 10
-  bullet: 10
-  Player:
-    serializedVersion: 2
-    m_Bits: 256
+  ShootOrigin: {fileID: 1435918266}
+  ShootForce: 6
   fireRate: 1.5
 --- !u!114 &1928647648 stripped
 MonoBehaviour:
@@ -3522,6 +3623,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 804623893157541170, guid: 79c8a9a8a83b82b49ad8524101d8071c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 804623893157541170, guid: 79c8a9a8a83b82b49ad8524101d8071c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 804623893157541170, guid: 79c8a9a8a83b82b49ad8524101d8071c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1869326845227942463, guid: 79c8a9a8a83b82b49ad8524101d8071c, type: 3}
       propertyPath: m_Name
       value: Main_Canvas
@@ -3643,3 +3756,4 @@ SceneRoots:
   - {fileID: 693778084}
   - {fileID: 1266713069}
   - {fileID: 1212586783886453365}
+  - {fileID: 163746023}

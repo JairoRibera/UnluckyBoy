@@ -41,7 +41,7 @@ public class Disparo_Prov : MonoBehaviour
 
                     Debug.Log("Golpeaste a: " + hit.transform.name);
                     // Le enviamos la coordenada 3D exacta del disparo
-                    isshoteable.RecibeShoot(hit.point);
+                    isshoteable.RecibeShoot(hit.point, damage);
                 }
                 else
                 {

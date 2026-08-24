@@ -6,7 +6,7 @@ public class Enemy_Body : MonoBehaviour, IsShooteable
     public ENEMY_PART part;
     public float damage;
     float finalDamage;
-    public void RecibeShoot(Vector3 hitpoint)
+    public void RecibeShoot(Vector3 hitpoint, float damage)
     {
         // Si impacta en la cabeza, aplicamos multiplicador crítico (ej. x2)
         if (part == ENEMY_PART.Head)

@@ -3,14 +3,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "armas", menuName = "Scriptable Objects/armas")]
 public class armas : ScriptableObject
 {
-    public new string name;
-    //Daño del arma
-    public float damage;
-    //Distancia de disparo
-    public float distance;
-    //booleana si es arma de fuero o cuerpo a cuerpo
-    public bool canShoot;
-    //Numeros de balas que tiene antes de recargar
-    public float bullet;
-    //Tiempo de recarga
+    public bool canShoot = true;
+    public float range = 100f;
+
+    [Header("Munición y Tiempos")]
+    public int maxAmmo = 15;
+    public float fireRate = 0.5f; // Límite de disparos por segundo (0.5s = 2 clicks por segundo)
+    public float reloadTime = 1f;
+    public float overheatTime = 2f; // Penalización por pasarse de 21
 }
