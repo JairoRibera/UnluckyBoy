@@ -580,6 +580,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6699292588945406385, guid: 517d53d0f6a4d4a498b5c3a4d2acef74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 397140912}
+    - targetCorrespondingSourceObject: {fileID: 6699292588945406385, guid: 517d53d0f6a4d4a498b5c3a4d2acef74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 397140913}
   m_SourcePrefab: {fileID: 100100000, guid: 517d53d0f6a4d4a498b5c3a4d2acef74, type: 3}
 --- !u!1 &397140902 stripped
 GameObject:
@@ -604,7 +607,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397140902}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc113d4d310736644a1877971e9a7c90, type: 3}
   m_Name: 
@@ -615,6 +618,29 @@ MonoBehaviour:
     m_Bits: 128
   maxChargeCards: 3
   timeBetweenCards: 0.4
+--- !u!114 &397140913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397140902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4dc2d6b9aebd5f438c1dc6a69ae2864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MachineGun_Dice
+  armaData: {fileID: 11400000, guid: 1cd953c8052d07b4291de6d7e691e3ca, type: 2}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  currentShootMode: 0
+  initialDamage: 15
+  finalDamage: 0
+  shootDelay: 0.2
+  isShooting: 0
+  currentAmmo: 0
+  timeToTriggerAuto: 0.2
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
