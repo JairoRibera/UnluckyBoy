@@ -8,7 +8,7 @@ public class Bullet_Enemy : MonoBehaviour
     public ObjectPool<Bullet_Enemy> pool;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float damage = 10;
-    [SerializeField] private float timer = 0.25f;
+    [SerializeField] private float timer = 0.35f;
     private float time;
     private bool isReleased = false;
     private void Start()
@@ -48,12 +48,17 @@ public class Bullet_Enemy : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (isReleased) return;
-        if (collision.gameObject.TryGetComponent(out Player_Life playerLife))
+        if (collision.gameObject)
         {
-            Debug.Log("Toma baklazofsklñadg");
-            playerLife.TakeDamage(damage);
+            if (collision.gameObject.TryGetComponent(out Player_Life playerLife))
+            {
+                Debug.Log("Toma baklazofsklñadg");
+                playerLife.TakeDamage(damage);
+                //pool.Release(this);
+            }
             pool.Release(this);
         }
+
         ////cuando choca contra algo, se devuelve a s� mismo al pool
     }
     private void ReturnToPool()

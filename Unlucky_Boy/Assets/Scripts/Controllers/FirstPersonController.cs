@@ -59,6 +59,7 @@ public class FirstPersonController : MonoBehaviour
         //SALTO
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
+            Debug.Log("Salta");
             rb.AddForce(Vector3.up * jumpForce);
         }
 
@@ -79,12 +80,12 @@ public class FirstPersonController : MonoBehaviour
         //Guardamos en la variable todos los colliders que encuentre el overlap
         //A�adimos como ultimo parametro la groundLayer para que solo detecte
         //los objetos que estan en esa capa
-        detectedColliders = Physics.OverlapBox(groundCheckCenter.position, 
-            groundCheckSize * 0.5f, Quaternion.Euler(0,0,0), groundLayer);
+        detectedColliders = Physics.OverlapBox(groundCheckCenter.position, groundCheckSize * 0.5f, Quaternion.Euler(0,0,0), groundLayer);
 
         //Cuando el checker detecte al menos un objeto suelo, podemos saltar
         if (detectedColliders.Length > 0)
         {
+            Debug.Log("Detectasuelo");
             isGrounded = true;
         }
         else //Cuando no haya ningun objeto detectado, ya estaremos en el aire

@@ -15,6 +15,7 @@ public class EnemyMove : MonoBehaviour
     [Header("Detection")]
     private Collider[] detectedCollider;
     public float enemyRange;
+    public float enemyShootRange;
     public LayerMask PlayerLayer;
     private Vector3 playerPosition;
     private bool isDetected;
@@ -23,10 +24,12 @@ public class EnemyMove : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         stopTimer = timeStopped;
         agent = GetComponent<NavMeshAgent>();
+        agent.speed = speed;
         player = GameObject.FindWithTag("Player");
-        points = GameObject.FindGameObjectsWithTag("RandomPoint");
+        //points = GameObject.FindGameObjectsWithTag("RandomPoint");
         enemyShoot =  GetComponent<EnemyShoot>();
         FindRandomPoint();
     }
@@ -39,17 +42,24 @@ public class EnemyMove : MonoBehaviour
     }
     public void MoveEnemy()
     {
+        
         //Solo persigue al jugador si lo ha detectado
         if (isDetected == true)
         {
+            agent.stoppingDistance = enemyShootRange;
             float distancetoShoot = Vector3.Distance(playerPosition, transform.position);
-            agent.speed = speed;
             agent.SetDestination(playerPosition);
             transform.LookAt(playerPosition);
-            if(distancetoShoot <= 6)
+            if(distancetoShoot <= enemyShootRange)
             {
                 agent.isStopped = true;
                 enemyShoot.Shoot();
+            }
+            else
+            {
+                agent.isStopped = false;
+                agent.stoppingDistance = enemyShootRange;
+                agent.SetDestination(playerPosition);
             }
         }
         else
@@ -65,6 +75,7 @@ public class EnemyMove : MonoBehaviour
             // 2. Si venía de perseguir al jugador (o se quedó sin ruta), forzamos punto nuevo
             if (!agent.hasPath || agent.remainingDistance <= 0.1f + agent.stoppingDistance)
             {
+                agent.stoppingDistance = 1;
                 FindRandomPoint();
             }
         }
@@ -93,5 +104,7 @@ public class EnemyMove : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, enemyRange);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, enemyShootRange);
     }
 }
