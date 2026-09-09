@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3b4c1c643bf2542bdd6a1db78574c9, type: 3}
+  m_Name: Combos
+  m_EditorClassIdentifier: Assembly-CSharp::ListaCombos
+  listaDeCombos:
+  - nombreCombo: Pareja_Left
+    secuenciaClave: LL
+    puntosBarra: 30
+    "multiplicadorDa\xF1o": 0
+  - nombreCombo: Pareja_Right
+    secuenciaClave: RR
+    puntosBarra: 30
+    "multiplicadorDa\xF1o": 0
+  - nombreCombo: Trio_Left
+    secuenciaClave: LLL
+    puntosBarra: 50
+    "multiplicadorDa\xF1o": 3
+  - nombreCombo: Trio_Right
+    secuenciaClave: RRR
+    puntosBarra: 50
+    "multiplicadorDa\xF1o": 3
+  - nombreCombo: Color_Left
+    secuenciaClave: LLLL
+    puntosBarra: 60
+    "multiplicadorDa\xF1o": 0
+  - nombreCombo: Color_Right
+    secuenciaClave: RRRR
+    puntosBarra: 60
+    "multiplicadorDa\xF1o": 0
+  - nombreCombo: Full_Left
+    secuenciaClave: LLLRR
+    puntosBarra: 150
+    "multiplicadorDa\xF1o": 0
+  - nombreCombo: Full_Right
+    secuenciaClave: RRRLL
+    puntosBarra: 150
+    "multiplicadorDa\xF1o": 0
+  - nombreCombo: Poker_Left
+    secuenciaClave: LRLR
+    puntosBarra: 80
+    "multiplicadorDa\xF1o": 0
+  - nombreCombo: Poker_Right
+    secuenciaClave: RLRL
+    puntosBarra: 80
+    "multiplicadorDa\xF1o": 0
