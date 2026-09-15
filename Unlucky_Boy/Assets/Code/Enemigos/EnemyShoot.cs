@@ -1,5 +1,4 @@
 using System.Threading;
-using Unity.Burst.Intrinsics;
 using UnityEngine;
 
 public class EnemyShoot : MonoBehaviour

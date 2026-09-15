@@ -1,10 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
-
-public class Barra_Vida : MonoBehaviour
+public class Barra_Knuckle : MonoBehaviour
 {
     [SerializeField] private Slider barravida;
-
     public void iniciarBarraVida(float vidaMax)
     {
         barravida.maxValue = vidaMax;
