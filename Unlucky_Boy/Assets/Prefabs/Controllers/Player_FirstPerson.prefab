@@ -279,6 +279,9 @@ GameObject:
   - component: {fileID: 9018187172479028022}
   - component: {fileID: 7341574348199422785}
   - component: {fileID: 8687369203112899745}
+  - component: {fileID: 2463396600508001916}
+  - component: {fileID: 3412834494019316224}
+  - component: {fileID: 3655119087824933780}
   m_Layer: 8
   m_Name: Player_FirstPerson
   m_TagString: Player
@@ -392,9 +395,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6699292588945406385}
   serializedVersion: 5
-  m_Mass: 9
+  m_Mass: 2
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 10
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -426,7 +429,7 @@ MonoBehaviour:
   moveSpeed: 5
   rotationSpeed: 500
   camXRot: 0
-  jumpForce: 10
+  jumpForce: 500
   isGrounded: 0
   groundCheckCenter: {fileID: 2261797956890076747}
   groundCheckSize: {x: 0.7, y: 0.05, z: 0.7}
@@ -480,6 +483,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CursorLocker
   bloquearAlIniciar: 1
   teclaLiberar: 27
+--- !u!114 &2463396600508001916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6699292588945406385}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc113d4d310736644a1877971e9a7c90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlackJack_Gun
+  armaData: {fileID: 11400000, guid: a2130caed05204347b757f239a270e3b, type: 2}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  maxChargeCards: 3
+  timeBetweenCards: 0.4
+--- !u!114 &3412834494019316224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6699292588945406385}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4dc2d6b9aebd5f438c1dc6a69ae2864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MachineGun_Dice
+  armaData: {fileID: 11400000, guid: 1cd953c8052d07b4291de6d7e691e3ca, type: 2}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  currentShootMode: 0
+  initialDamage: 15
+  finalDamage: 0
+  shootDelay: 0.2
+  isShooting: 0
+  currentAmmo: 0
+  timeToTriggerAuto: 0.2
+--- !u!114 &3655119087824933780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6699292588945406385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23fa0dcc3f3bdba448ab97df801b99c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Poker_knuckle
+  Hitbox: {fileID: 0}
+  timer: 0
+  isHitting: 0
+  PlayerPunch: 
+  listacombos: {fileID: 11400000, guid: 080c2b72412576b43b0ec30594c0779c, type: 2}
 --- !u!1 &7255949113177471389
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,6 @@ public struct DatosCombo
     //Con esto el diccionario devuelve todos los datos de golpe
     public string nombreCombo;       // Ej: "Trío"
     public string secuenciaClave;    // Ej: "III" o "IDID"
-    public float puntosBarra;        // Ej: 50
+    public int puntosBarra;        // Ej: 50
     public float multiplicadorDaño;  // Ej: 3
 }
