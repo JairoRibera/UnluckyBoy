@@ -85,7 +85,7 @@ public class FirstPersonController : MonoBehaviour
         //Cuando el checker detecte al menos un objeto suelo, podemos saltar
         if (detectedColliders.Length > 0)
         {
-            Debug.Log("Detectasuelo");
+            //Debug.Log("Detectasuelo");
             isGrounded = true;
         }
         else //Cuando no haya ningun objeto detectado, ya estaremos en el aire

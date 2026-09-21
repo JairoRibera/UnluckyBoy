@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class Poker_knuckle : MonoBehaviour
 {
@@ -13,13 +14,17 @@ public class Poker_knuckle : MonoBehaviour
     [SerializeField] private float time_Desactive = .1f;
     public bool isHitting = false;
     private PunchType ultimoGolpe;
-    [Header ("Lista de combos")]//Aqui ponemos los diferentes combos que hemos creado
+    [Header("Lista de combos")]//Aqui ponemos los diferentes combos que hemos creado
+    //Lista de letras que debemos de cambiar
+    public List<TextMeshProUGUI> listaLetras;
     // La lista actual de golpes que va dando el jugador
     public List<PunchType> PlayerPunch = new List<PunchType>();
     public ListaCombos listacombos;
     public HitBox_knuckle hitbox_Ref;
     [SerializeField]private float time = 10;
     public float timer;
+    //Booleana para saber si las letras tienen algo o no
+    public bool full;
     [SerializeField] private bool timerIsActive = false;
     private int puntos = 0;
     // El diccionario interno (Clave: "IDID" -> Valor: Datos del combo)
@@ -60,10 +65,10 @@ public class Poker_knuckle : MonoBehaviour
         if(timerIsActive == true)
         {
             timer -= Time.deltaTime;
-            Debug.Log($"Tiempo restante de combo :{timer:F2}");
+            //Debug.Log($"Tiempo restante de combo :{timer:F2}");
             if (timer <= 0)
             {
-                Debug.Log("Tiempo Agotado, verificar combo");
+                //Debug.Log("Tiempo Agotado, verificar combo");
                 CheckCombo();
             }
         }
@@ -106,6 +111,10 @@ public class Poker_knuckle : MonoBehaviour
         }
         //Esto es para limpiar la lista
         PlayerPunch.Clear();
+        foreach (var letter in listaLetras)
+        {
+            if (letter != null) letter.text = "";
+        }
         timerIsActive = false;
         timer = time;
     }
@@ -128,7 +137,7 @@ public class Poker_knuckle : MonoBehaviour
         //{
         //    resultado = resultado + "R";
         //}
-        Debug.Log(resultado);
+        //Debug.Log(resultado);
         return resultado;
     }
     public void Golpe (PunchType punch)
@@ -145,6 +154,7 @@ public class Poker_knuckle : MonoBehaviour
         PlayerPunch.Add(ultimoGolpe);
         timer = time;
         timerIsActive = true;
+        LayoutLetters();
         Debug.Log("$¡Impacto confirmado! Golpe registrado: {ultimoGolpeLanzado}. Total en combo: {PlayerPunch.Count}");
     }
     private IEnumerator DesactiveHitboxCo(float time)
@@ -152,6 +162,43 @@ public class Poker_knuckle : MonoBehaviour
         yield return new WaitForSeconds(time);
         Hitbox.SetActive(false);
         isHitting = false;
+    }
+    //Aquí vamos a poner las letras en el layout
+    public void LayoutLetters()
+    {
+        //valor de tipo string que le vamos a dar a cada golpe realizado
+        string Letter = "";
+        //Si no hay nada dentro de la lista de goles, entonces no hace nada
+        if (PlayerPunch.Count <= 0) return;
+        //buscamos el ultimo golpe realizado, si tiene el enum Left añadimos L de lo contrario R
+        Letter += (PlayerPunch[PlayerPunch.Count - 1] == PunchType.Left) ? "L" : "R";
+        //Bucle que mira si dentro de las listas, el texto es null o no tiene nada escrito
+        foreach (var letrasVacias in listaLetras)
+        {
+            if (letrasVacias != null && string.IsNullOrWhiteSpace(letrasVacias.text))
+            {
+                full = false;
+                break;
+            }
+        }
+        //// Si todos están llenos, borramos todo para volver a empezar
+        if (full == true)
+        {
+            foreach (var letter in listaLetras)
+            {
+                if (letter != null) letter.text = "";
+            }
+        }
+        //Bucle para añadis la letra del golpe L/R del golpe realizado
+        foreach (var letter in listaLetras)
+        {
+            if(letter.text == "")
+            {
+                Debug.Log("Añadir Letraa");
+                letter.text = Letter;
+                return;
+            }
+        }
     }
 
 }
