@@ -666,6 +666,17 @@ MonoBehaviour:
   timer_Reload: 0
   tragaperras: 01000000020000000300000004000000
   Resultados: 
+--- !u!114 &397140907 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3655119087824933780, guid: 517d53d0f6a4d4a498b5c3a4d2acef74, type: 3}
+  m_PrefabInstance: {fileID: 397140901}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397140902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23fa0dcc3f3bdba448ab97df801b99c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Poker_knuckle
 --- !u!1 &398654525
 GameObject:
   m_ObjectHideFlags: 0
@@ -4150,6 +4161,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5603998398260248431, guid: 79c8a9a8a83b82b49ad8524101d8071c, type: 3}
+      propertyPath: pokerRef
+      value: 
+      objectReference: {fileID: 397140907}
     - target: {fileID: 6583879550689668114, guid: 79c8a9a8a83b82b49ad8524101d8071c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 15
