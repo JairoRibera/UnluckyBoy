@@ -2,9 +2,11 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using System;
 
 public class Poker_knuckle : MonoBehaviour
 {
+    public Action Aumentar_Barra { get; set; }
     //De momento el combo funciona
     //Hay que hacer varios temporizadores, uno para cuando des un puñetazo, otro para saber cuando hay que verificar el combo, y otro para saber si hemos dejado de golpear para verificar el combo
     public enum PunchType { Right , Left };//Esto son los 2 tipos de golpes que puedes lanzar
@@ -155,6 +157,7 @@ public class Poker_knuckle : MonoBehaviour
         timer = time;
         timerIsActive = true;
         LayoutLetters();
+        Aumentar_Barra?.Invoke();
         Debug.Log("$¡Impacto confirmado! Golpe registrado: {ultimoGolpeLanzado}. Total en combo: {PlayerPunch.Count}");
     }
     private IEnumerator DesactiveHitboxCo(float time)
