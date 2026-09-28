@@ -567,7 +567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3655119087824933780, guid: 517d53d0f6a4d4a498b5c3a4d2acef74, type: 3}
       propertyPath: time
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3655119087824933780, guid: 517d53d0f6a4d4a498b5c3a4d2acef74, type: 3}
       propertyPath: Hitbox
