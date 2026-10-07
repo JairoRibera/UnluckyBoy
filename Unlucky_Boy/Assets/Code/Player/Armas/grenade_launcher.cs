@@ -1,8 +1,14 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Rendering;
 public class grenade_launcher : MonoBehaviour
 {
+    public float speed;
+    public float ForceUp;
+    float nextTimeToShoot = 0f;
+    public float fireRate = 1.5f; // Cadencia: dispara cada 1.5 segundos
+    [SerializeField] Transform ShootOrigin;
     //Un struct (estructura) en C# es una estructura de datos personalizada que agrupa varias variables relacionadas bajo un mismo nombre.
     [System.Serializable]
     public struct DropItem
@@ -20,10 +26,6 @@ public class grenade_launcher : MonoBehaviour
         new DropItem {name =  "Proyecil misil", weight = 30f},
         new DropItem {name =  "Jackpot", weight = 10f}
     };
-    //public GameObject bullet;
-    public float force;
-    public float timeTo_Reload;
-    public float timer_Reload;
     [SerializeField] int[] tragaperras = new int[] {1,2,3,4};
     [SerializeField]int[] Resultados;
     public DropItem GetRandomBullet()
@@ -63,14 +65,19 @@ public class grenade_launcher : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F)) GetRandomBullet();
+        Shoot();
     }
     public void Shoot()
     {
+        if (Input.GetButtonDown("Fire1")&& Time.time >= nextTimeToShoot)
+        {
+            nextTimeToShoot = Time.time + fireRate;
+            // Le pedimos la bala al Pool centralizado pasando nuestra posición actual
+            Bullet_PlayerPooling.Instance.SpawnBullet(ShootOrigin.position, ShootOrigin.rotation, speed, ForceUp);
+            
+
+        } 
 
     }
-    public void CambiarBala(int bala)
-    {
-
-    } 
 
 }

@@ -30,7 +30,7 @@ public class Bullet_EnemyPooling : MonoBehaviour
             return;
         }
         //Creamos un pool de objetos tipo Damage_Text y utiliza estas funciones que he escrito para saber qué hacer cuando necesites crear uno nuevo, activarlo o guardarlo
-        Bullet_Pool = new ObjectPool<Bullet_Enemy>(CreateBullet, GetBullet, ReleaseBullet, DestroyBullet, true, defaultCapacity, maxCapacity);
+        Bullet_Pool = new ObjectPool<Bullet_Enemy>(CreateBullet, GetBullet, ReleaseBullet, DestroyBullet, false, defaultCapacity, maxCapacity);
     }
     //esta funcion se llama al crear el pool por tantas veces como objetos pueda tener
     //por ejemplo, si se especifica un tamaño de 20 para el pool, llama a la funcion 20 veces
@@ -47,6 +47,7 @@ public class Bullet_EnemyPooling : MonoBehaviour
     //Se llama cada vez que se coja un texto del pool
     private void GetBullet(Bullet_Enemy bullet)
     {
+        bullet.pool = Bullet_Pool; // <-- Asegura que la bala sepa a qué pool volver
         //al sacar un objeto del pool, lo principal es activarlo
         bullet.gameObject.SetActive(true);
     }

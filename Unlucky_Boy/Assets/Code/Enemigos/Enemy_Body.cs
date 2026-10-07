@@ -17,7 +17,7 @@ public class Enemy_Body : MonoBehaviour, IsShooteable
         if(part == ENEMY_PART.Body)
         {
             finalDamage = damage;
-        }
+        } 
             Enemy enemyParent = GetComponentInParent<Enemy>();
         if (enemyParent != null) 
         {
