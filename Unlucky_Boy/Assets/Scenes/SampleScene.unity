@@ -801,7 +801,7 @@ Transform:
   m_GameObject: {fileID: 398654525}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.95, y: 1.88, z: 4.14}
+  m_LocalPosition: {x: 1.95, y: 1.88, z: 0.52}
   m_LocalScale: {x: 4.4653, y: 3.652, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3449,6 +3449,7 @@ GameObject:
   - component: {fileID: 1893426563}
   - component: {fileID: 1893426564}
   - component: {fileID: 1893426565}
+  - component: {fileID: 1893426566}
   m_Layer: 7
   m_Name: Enemigo
   m_TagString: Untagged
@@ -3567,6 +3568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17d58874c6372842bd760328a1bc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  stunTime: 0.25
   life: 100
   rb: {fileID: 0}
 --- !u!195 &1893426563
@@ -3576,7 +3578,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893426556}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
@@ -3598,7 +3600,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893426556}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: caab23e25baa0dd4e85cd5328c9c58d9, type: 3}
   m_Name: 
@@ -3631,6 +3633,33 @@ MonoBehaviour:
   ShootOrigin: {fileID: 1435918266}
   ShootForce: 6
   fireRate: 1.5
+--- !u!54 &1893426566
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893426556}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &1928647648 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6015172940098629787, guid: 79c8a9a8a83b82b49ad8524101d8071c, type: 3}
@@ -4254,9 +4283,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2824411676688493964, guid: 2491a1d61bcba4649bbed419e0b66849, type: 3}
+      propertyPath: m_Radius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824411676688493964, guid: 2491a1d61bcba4649bbed419e0b66849, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824411676688493964, guid: 2491a1d61bcba4649bbed419e0b66849, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 3617136850782910259, guid: 2491a1d61bcba4649bbed419e0b66849, type: 3}
+      propertyPath: RandomExplotion.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3617136850782910259, guid: 2491a1d61bcba4649bbed419e0b66849, type: 3}
+      propertyPath: RandomExplotion.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5130099265628469754, guid: 2491a1d61bcba4649bbed419e0b66849, type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5130099265628469754, guid: 2491a1d61bcba4649bbed419e0b66849, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5442532976673565079, guid: 2491a1d61bcba4649bbed419e0b66849, type: 3}
       propertyPath: m_Name
       value: GranadeZone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442532976673565079, guid: 2491a1d61bcba4649bbed419e0b66849, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5530173917367681578, guid: 2491a1d61bcba4649bbed419e0b66849, type: 3}
       propertyPath: m_LocalPosition.x

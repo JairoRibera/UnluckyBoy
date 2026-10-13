@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using JetBrains.Annotations;
 //Creamos una interfaz para que cada parte del cuerpo pueda recibir el disparo
 public interface IsShooteable
 {
@@ -10,23 +11,18 @@ public interface IsShooteable
 }
 public interface IsPusheable
 {
-    public void RecibePush(float distance);
+    public void Knockback(Vector3 dir, float distance);
 }
 public class Enemy : MonoBehaviour
 {
+    public float stunTime = .25f;
     public float life = 100;
     [SerializeField]private Rigidbody rb;
-    public void EmpujeEnemy(float distance)
-    {
-        
-        Vector3 dirEmpuje = -transform.forward * distance;
-        rb.AddForce(dirEmpuje, ForceMode.Impulse);
-    }
     public void recibirdano(float damage)
     {
         life -= damage;
         if (life <= 0)
-        {
+        {   
             Muelto();
         }
     }

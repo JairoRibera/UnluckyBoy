@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
+using System.Collections;
+using System.Collections.Generic;
 
-public class EnemyMove : MonoBehaviour
+public class EnemyMove : MonoBehaviour, IsPusheable
 {
+
     [Header("Movimiento")]
     public float speed;
     public GameObject[] points;
@@ -106,5 +109,33 @@ public class EnemyMove : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, enemyRange);
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, enemyShootRange);
+    }
+    public void Knockback(Vector3 dir, float distance)
+    {
+        StartCoroutine(KnockbackCO(dir, distance));
+    }
+    public IEnumerator KnockbackCO(Vector3 sourcePosition, float force)
+    {
+        agent.isStopped = true;
+        agent.updatePosition = false;
+
+        // Calcular dirección contraria a la fuente del daño
+        Vector3 direction = (transform.position - sourcePosition).normalized;
+        direction = Vector3.Scale(direction, new Vector3(1, 0, 1));
+
+        float timer = 0f;
+        while (timer < 0.25)
+        {
+            transform.position += direction * force * Time.deltaTime;
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(0.25f / 2);
+
+        // Reactivar el agente
+        agent.Warp(transform.position);
+        agent.updatePosition = true;
+        agent.isStopped = false;
     }
 }
