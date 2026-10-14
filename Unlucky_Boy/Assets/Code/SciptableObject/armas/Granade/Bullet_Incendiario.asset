@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed3e7c06ed9fb3b4aa745b11a47fafb2, type: 3}
+  m_Name: Bullet_Incendiario
+  m_EditorClassIdentifier: Assembly-CSharp::Granade_BulletData
+  Speed: 5
+  ForceUp: 10
+  damage: 0
+  lifeTime: 10
+  physicMaterial: {fileID: 13400000, guid: 9d6b4068711497f40895e94bb83eff71, type: 2}

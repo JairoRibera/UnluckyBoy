@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bullet_PlayerPooling : MonoBehaviour
 {
+    //Indicamos la bala que se va a necesitar
+    [SerializeField]private BulletType Bala;
     public static Bullet_PlayerPooling Instance { get; private set; }
     //Prefab que se va a usar
     [SerializeField] private Bullet_Player bulletPrefab;

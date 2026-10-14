@@ -361,9 +361,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94713e2e9b6f71c4a99941ef36178bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet_PlayerPooling
+  Bala: 0
   bulletPrefab: {fileID: 3024769219901299915, guid: 7cf2d2a3bffb49947917f79360080ef1, type: 3}
-  defaultCapacity: 30
-  maxCapacity: 50
+  defaultCapacity: 50
+  maxCapacity: 70
 --- !u!1 &233910364
 GameObject:
   m_ObjectHideFlags: 0
@@ -4034,6 +4035,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1258463378344681870, guid: 79c8a9a8a83b82b49ad8524101d8071c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258463378344681870, guid: 79c8a9a8a83b82b49ad8524101d8071c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258463378344681870, guid: 79c8a9a8a83b82b49ad8524101d8071c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1414585533652566301, guid: 79c8a9a8a83b82b49ad8524101d8071c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

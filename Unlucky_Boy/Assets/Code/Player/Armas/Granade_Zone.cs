@@ -2,15 +2,14 @@ using UnityEngine;
 using System.Collections;
 public class Granade_Zone : MonoBehaviour
 {
-    public Vector2 RandomExplotion;
-    public float Push = 5;
+    public Vector2 RandomPush;
     //Daño
     public float damage;
     //Lista de enemigos
     //Metodo para activar 
     public float RandomNumber()
     {
-        float Number = Random.Range(RandomExplotion.x, RandomExplotion.y);
+        float Number = Random.Range(RandomPush.x, RandomPush.y);
         return Number;
     }
     private void OnTriggerEnter(Collider other)
