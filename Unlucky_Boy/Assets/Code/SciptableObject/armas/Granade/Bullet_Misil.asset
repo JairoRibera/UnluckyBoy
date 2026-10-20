@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed3e7c06ed9fb3b4aa745b11a47fafb2, type: 3}
   m_Name: Bullet_Misil
   m_EditorClassIdentifier: Assembly-CSharp::Granade_BulletData
-  Speed: 5
+  Speed: 15
   ForceUp: 0
   damage: 10
   lifeTime: 10

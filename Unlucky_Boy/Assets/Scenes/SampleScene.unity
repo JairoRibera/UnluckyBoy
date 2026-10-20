@@ -361,8 +361,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94713e2e9b6f71c4a99941ef36178bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet_PlayerPooling
-  Bala: 0
-  bulletPrefab: {fileID: 3024769219901299915, guid: 7cf2d2a3bffb49947917f79360080ef1, type: 3}
+  playerWeapon: {fileID: 397140905}
+  bulletConfiguration:
+  - balaType: 1
+    bulletPrefab: {fileID: 4351188697070495630, guid: df2f946799b104e468ef3ab06a3a75bd, type: 3}
+  - balaType: 0
+    bulletPrefab: {fileID: 3588540658307070350, guid: 7438c73a845c916499700d241a32a24b, type: 3}
+  - balaType: 2
+    bulletPrefab: {fileID: 6037498927968763067, guid: 002367c129886864ea04713103e90e50, type: 3}
   defaultCapacity: 50
   maxCapacity: 70
 --- !u!1 &233910364
@@ -682,8 +688,7 @@ MonoBehaviour:
   ForceUp: 10
   fireRate: 1
   ShootOrigin: {fileID: 1523039359}
-  listaBalas: []
-  tragaperras: 01000000020000000300000004000000
+  tragaperras: 010000000200000003000000
   Resultados: 
 --- !u!114 &397140907 stripped
 MonoBehaviour:
