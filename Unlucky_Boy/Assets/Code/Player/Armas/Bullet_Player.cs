@@ -3,8 +3,13 @@ using UnityEngine.Pool;
 using System.Collections;
 public class Bullet_Player : MonoBehaviour
 {
-    //El pool al que pertenece este objeto
-    public ObjectPool<Bullet_Player> pool;
+    // Al ser de la clase base Bullet_Player, puede recibir cualquier pool que maneje esta jerarquía.
+    public IObjectPool<Bullet_Player> pool;
+    public void SetPool(IObjectPool<Bullet_Player> bulletPool)
+    {
+        pool = bulletPool;
+    }
+    [SerializeField] private BulletType TipoBala;
     private bool isReleased = false;
     [SerializeField]private Rigidbody rb;
     [SerializeField] private float timer = 10f;

@@ -6,15 +6,13 @@ public class Granade_Rebote : Bullet_Player
     public BulletType Bala;
     //indicamos el scriptable object para que obtenga las modificaciones necesarias
     public Granade_BulletData Data;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Shoot(float ForceUp, float speed)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(Data != null)
+        {
+            ForceUp = Data.ForceUp;
+            speed = Data.Speed;
+        }
+        base.Shoot(ForceUp, speed);
     }
 }
