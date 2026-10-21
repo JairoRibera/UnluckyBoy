@@ -1,8 +1,4 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using System;
-using JetBrains.Annotations;
 //Creamos una interfaz para que cada parte del cuerpo pueda recibir el disparo
 public interface IsShooteable
 {
@@ -12,6 +8,10 @@ public interface IsShooteable
 public interface IsPusheable
 {
     public void Knockback(Vector3 dir, float distance);
+}
+public interface IsFire
+{
+    public void Fire(Vector3 hitpoint, float damage, float time, float inteval);
 }
 public class Enemy : MonoBehaviour
 {

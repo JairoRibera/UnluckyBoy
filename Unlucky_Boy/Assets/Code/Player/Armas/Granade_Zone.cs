@@ -14,10 +14,8 @@ public class Granade_Zone : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("ExplotioasngfoaidksbgnfÑASHJ");
         if (other.gameObject.TryGetComponent(out IsPusheable enemy))
         {
-            Debug.Log("PUM");
             enemy.Knockback(transform.position, RandomNumber());
         }
         if(other.gameObject.TryGetComponent(out IsShooteable enemySho))
