@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class BlackJack_Gun : MonoBehaviour
 {
+    private float maxAmmo = 20f;
+    private ArmType type = ArmType.Gun;
     [SerializeField] private armas armaData;
     [SerializeField] private LayerMask enemyLayer;
     [Header("Blackjack Mechanics")]
@@ -13,7 +15,7 @@ public class BlackJack_Gun : MonoBehaviour
     private int cardsDrawn = 0;
 
     private Camera cam;
-    private int CurrentAmmo;
+    private float CurrentAmmo;
     private float nextTimeToShoot = 0f;
     private bool isReloading = false;
     private bool isOverheated = false;
@@ -61,6 +63,30 @@ public class BlackJack_Gun : MonoBehaviour
             StartCoroutine(Reload());
         }
     }
+    public void Recharge()
+    {
+        if (CurrentAmmo < maxAmmo && Input.GetKeyDown(KeyCode.F))
+        {
+            // Comprobamos que el Singleton exista antes de invocarlo
+            if (Ammunition_System.Instance != null)
+            {
+                float ammoNeed = maxAmmo - CurrentAmmo;
+                float ammoToTake = Ammunition_System.Instance.UseAmmo(ammoNeed, ArmType.Granade);
+                if (ammoToTake > 0)
+                {
+                    CurrentAmmo += ammoToTake;
+                }
+                else
+                {
+                    Debug.Log("No hay balas");
+                }
+
+                Debug.Log("Recargar lanzagranadas");
+            }
+    }
+
+    
+}
     // Genera una carta
     private int GetRandomCardValue()
     {
@@ -76,7 +102,7 @@ public class BlackJack_Gun : MonoBehaviour
 
         PerformRaycast(cardValue);
     }
-    // --- LÓGICA DE RAYCAST ---
+    //  LÓGICA DE RAYCAST 
     private void PerformRaycast(int damageValue)
     {
         RaycastHit hit;

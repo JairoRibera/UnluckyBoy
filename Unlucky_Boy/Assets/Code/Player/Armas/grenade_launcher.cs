@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine.Events;
 public class grenade_launcher : MonoBehaviour
 {
+    public armas ArmData;
+    ArmType type = ArmType.Granade;
+    private float maxAmmo;
+    private float currentAmmo;
+    public UnityAction<float, ArmType> SignRecharge;
     public float speed;
     public float ForceUp;
     float nextTimeToShoot = 0f;
-    public float fireRate = 1.5f; // Cadencia: dispara cada 1.5 segundos
+    public float fireRate; // Cadencia: dispara cada 1.5 segundos
     [SerializeField] Transform ShootOrigin;
     public UnityAction<BulletType> ChangeBullet;
     //guarda la bala seleccionada actualmente
@@ -31,6 +36,9 @@ public class grenade_launcher : MonoBehaviour
     [SerializeField]int[] Resultados;
     private void Start()
     {
+        currentAmmo = ArmData.maxAmmo;
+        maxAmmo = ArmData.maxAmmo;
+        fireRate = ArmData.fireRate;
         // Forzamos la selección de la primera bala al iniciar el juego
         GetRandomBullet();
     }
@@ -73,20 +81,43 @@ public class grenade_launcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F)) GetRandomBullet();
+        Recharge();
         Shoot();
     }
     public void Shoot()
     {
-        if (Input.GetButtonDown("Fire1")&& Time.time >= nextTimeToShoot)
+        if (Input.GetButtonDown("Fire1")&& Time.time >= nextTimeToShoot&& currentAmmo > 0)
         {
             nextTimeToShoot = Time.time + fireRate;
             // Le pedimos la bala al Pool centralizado pasando nuestra posición actual
             Bullet_PlayerPooling.Instance.SpawnBullet(currentBullet.Type ,ShootOrigin.position, ShootOrigin.rotation, speed, ForceUp);
-            
+            currentAmmo--;
 
-        } 
+        }
+    }
+    public void Recharge() 
+    {
+        if (currentAmmo < maxAmmo && Input.GetKeyDown(KeyCode.F)) 
+        {
+            // Comprobamos que el Singleton exista antes de invocarlo
+            if (Ammunition_System.Instance != null)
+            {
+                float ammoNeed = maxAmmo - currentAmmo;
+                float ammoToTake = Ammunition_System.Instance.UseAmmo(ammoNeed, ArmType.Granade);
+                if(ammoToTake > 0)
+                {
+                    currentAmmo += ammoToTake;
+                    GetRandomBullet();
+                }
+                else
+                {
+                    Debug.Log("No hay balas");
+                }
 
+                Debug.Log("Recargar lanzagranadas");
+            }
+        }
+        
     }
 
 }

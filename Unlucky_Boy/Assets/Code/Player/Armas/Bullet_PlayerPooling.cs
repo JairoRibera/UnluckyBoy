@@ -4,6 +4,7 @@ using UnityEngine.Pool;
 
 public class Bullet_PlayerPooling : MonoBehaviour
 {
+
     // Variable temporal que usará CreateBullet en el instante de la creación
     private Bullet_Player prefabParaInstanciar;
     [SerializeField] private grenade_launcher playerWeapon;
