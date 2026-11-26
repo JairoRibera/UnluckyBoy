@@ -15,6 +15,7 @@ public interface IsFire
 }
 public class Enemy : MonoBehaviour
 {
+    public EnemyType Type;
     public float stunTime = .25f;
     public float life = 100;
     [SerializeField]private Rigidbody rb;

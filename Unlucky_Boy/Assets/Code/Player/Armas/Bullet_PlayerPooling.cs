@@ -4,16 +4,11 @@ using UnityEngine.Pool;
 
 public class Bullet_PlayerPooling : MonoBehaviour
 {
-
-    // Variable temporal que usará CreateBullet en el instante de la creación
-    private Bullet_Player prefabParaInstanciar;
     [SerializeField] private grenade_launcher playerWeapon;
     public BulletType currentType = BulletType.Rebote;
-    private Bullet_Player prefabActual;
     public static Bullet_PlayerPooling Instance { get; private set; }
     [System.Serializable]
-    public struct BulletConfiguration 
-    { 
+    public struct BulletConfiguration { 
         public BulletType balaType;//Indicamos la bala que se va a necesitar
         public Bullet_Player bulletPrefab;//Prefab que se va a usar
     }
@@ -31,7 +26,7 @@ public class Bullet_PlayerPooling : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-        }
+        } 
         else
         {
             // Si hay un duplicado, lo destruyo
